@@ -1,2 +1,2 @@
--Wysiwyg-Wicket-Sample
+Wysiwyg-Wicket-Sample
 ======================
