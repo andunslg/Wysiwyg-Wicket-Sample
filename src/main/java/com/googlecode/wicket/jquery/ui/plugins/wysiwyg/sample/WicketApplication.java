@@ -1,5 +1,7 @@
 package com.googlecode.wicket.jquery.ui.plugins.wysiwyg.sample;
 
+import org.apache.wicket.markup.html.IPackageResourceGuard;
+import org.apache.wicket.markup.html.SecurePackageResourceGuard;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.protocol.http.WebApplication;
 
@@ -25,6 +27,7 @@ public class WicketApplication extends WebApplication
 	public void init()
 	{
 		super.init();
+
 
 		// add your configuration here
 	}
