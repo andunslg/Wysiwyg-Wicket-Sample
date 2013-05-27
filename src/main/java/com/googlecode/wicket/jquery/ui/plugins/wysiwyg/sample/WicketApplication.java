@@ -27,7 +27,16 @@ public class WicketApplication extends WebApplication
 	public void init()
 	{
 		super.init();
-
+		IPackageResourceGuard packageResourceGuard =
+				getResourceSettings().getPackageResourceGuard();
+		if (packageResourceGuard instanceof SecurePackageResourceGuard)
+		{
+			SecurePackageResourceGuard guard = (SecurePackageResourceGuard)
+					packageResourceGuard;
+			guard.addPattern("+*.eot");
+			guard.addPattern("+*.woff");
+			guard.addPattern("+*.ttf");
+		}
 
 		// add your configuration here
 	}
