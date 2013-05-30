@@ -6,12 +6,12 @@ import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 
 
-public class HomePage extends WebPage {
-	private static final long serialVersionUID = 1L;
+public class HomePage extends WebPage{
+	private static final long serialVersionUID=1L;
 
-	public HomePage(final PageParameters parameters) {
+	public HomePage(final PageParameters parameters){
 		super(parameters);
-		this.add(new WysiwygBehavior("#editor","wysiwyg"));
-		this.add(new WysiwygEditor("container"));
+		this.add(new WysiwygBehavior("#editorArea","wysiwyg"));
+		this.add(new WysiwygEditor("buttonPanel","editorArea"));
 	}
 }
