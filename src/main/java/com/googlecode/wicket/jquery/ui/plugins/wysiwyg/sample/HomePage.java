@@ -26,7 +26,7 @@ public class HomePage extends WebPage{
 			}
 		});
 		form.add(wysiwygEditor);
-		this.add(new WysiwygBehavior("#editorArea","wysiwyg"));
+
 //		this.add(new WysiwygEditor("buttonPanel","editorArea"));
 
 	}
