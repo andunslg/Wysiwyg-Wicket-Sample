@@ -24,42 +24,6 @@ public class Editor extends WebPage{
 
 		super(parameters);
 
-		WebMarkupContainer components=new WebMarkupContainer("languages");
-
-		components.add(new Link("english")
-		{
-			@Override
-			public void onClick()
-			{
-				getSession().setLocale(new Locale("english"));
-			}
-		});
-		components.add(new Link("russian")
-		{
-			@Override
-			public void onClick()
-			{
-				getSession().setLocale(new Locale("russian"));
-			}
-		});
-		components.add(new Link("spanish")
-		{
-			@Override
-			public void onClick()
-			{
-				getSession().setLocale(new Locale("spanish"));
-			}
-		});
-		components.add(new Link("french")
-		{
-			@Override
-			public void onClick()
-			{
-				getSession().setLocale(new Locale("french"));
-			}
-		});
-
-		this.add(components);
 
 		Form form=new Form("form");
 		form.add(new AjaxButton("submitBtn"){
@@ -70,6 +34,39 @@ public class Editor extends WebPage{
 			}
 
 		}) ;
+
+		form.add(new Link("english")
+		{
+			@Override
+			public void onClick()
+			{
+				getSession().setLocale(new Locale("english"));
+			}
+		});
+		form.add(new Link("russian")
+		{
+			@Override
+			public void onClick()
+			{
+				getSession().setLocale(new Locale("russian"));
+			}
+		});
+		form.add(new Link("spanish")
+		{
+			@Override
+			public void onClick()
+			{
+				getSession().setLocale(new Locale("spanish"));
+			}
+		});
+		form.add(new Link("french")
+		{
+			@Override
+			public void onClick()
+			{
+				getSession().setLocale(new Locale("french"));
+			}
+		});
 
 		wysiwygDefaultToolbar=new DefaultWysiwygToolbar("toolbarContainer");
 		form.add(wysiwygDefaultToolbar);
