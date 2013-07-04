@@ -24,18 +24,21 @@ public class Editor extends WebPage{
 
 		super(parameters);
 
-
 		Form form=new Form("form");
-		form.add(new AjaxButton("submitBtn"){
+
+		AjaxButton submit=new AjaxButton("submitBtn"){
 			@Override
 			protected void onSubmit(AjaxRequestTarget target, Form<?> form){
 				System.out.println(wysiwygEditor.getModelObject());
-				System.out.println(value);
 			}
 
-		}) ;
+		} ;
 
-		form.add(new Link("english")
+		form.add(submit);
+
+		WebMarkupContainer langs=new WebMarkupContainer("languages");
+
+		langs.add(new Link("english")
 		{
 			@Override
 			public void onClick()
@@ -43,7 +46,7 @@ public class Editor extends WebPage{
 				getSession().setLocale(new Locale("english"));
 			}
 		});
-		form.add(new Link("russian")
+		langs.add(new Link("russian")
 		{
 			@Override
 			public void onClick()
@@ -51,7 +54,7 @@ public class Editor extends WebPage{
 				getSession().setLocale(new Locale("russian"));
 			}
 		});
-		form.add(new Link("spanish")
+		langs.add(new Link("spanish")
 		{
 			@Override
 			public void onClick()
@@ -59,7 +62,7 @@ public class Editor extends WebPage{
 				getSession().setLocale(new Locale("spanish"));
 			}
 		});
-		form.add(new Link("french")
+		langs.add(new Link("french")
 		{
 			@Override
 			public void onClick()
@@ -67,6 +70,8 @@ public class Editor extends WebPage{
 				getSession().setLocale(new Locale("french"));
 			}
 		});
+
+		form.add(langs);
 
 		wysiwygDefaultToolbar=new DefaultWysiwygToolbar("toolbarContainer");
 		form.add(wysiwygDefaultToolbar);
