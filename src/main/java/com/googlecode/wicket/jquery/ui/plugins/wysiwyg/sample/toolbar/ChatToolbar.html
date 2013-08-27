@@ -28,83 +28,380 @@
     <div wicket:id="toolbar" class="btn-toolbar" data-role="editor-toolbar">
 
         <div class="btn-group">
-            <a wicket:id="fontSize" class="btn dropdown-toggle" data-toggle="dropdown" title="">
-                <wicket:link><img src="font.png"></wicket:link>
+            <a id="fontSize" class="btn dropdown-toggle" data-toggle="dropdown" title="Font Size">
+                <i>F</i>
                 <b class="caret"></b></a>
             <ul class="dropdown-menu">
-                <li><a data-edit="fontSize 5">
-                    <div wicket:id="huge" style="font-size: 20pt"></div>
-                </a></li>
-                <li><a data-edit="fontSize 3">
-                    <div wicket:id="medium" style="font-size: 15pt"></div>
-                </a></li>
-                <li><a data-edit="fontSize 1">
-                    <div wicket:id="small" style="font-size: 10pt"></div>
-                </a></li>
+                <li><a data-edit="fontSize 5"><font size="3">Huge</font></a></li>
+                <li><a data-edit="fontSize 3"><font size="2">Normal</font></a></li>
+                <li><a data-edit="fontSize 1"><font size="1">Small</font></a></li>
             </ul>
         </div>
         <div class="btn-group">
-            <a wicket:id="bold" class="btn" data-edit="bold" title="">
-                <wicket:link><img src="text_bold.png"></wicket:link>
+            <a id="bold" class="btn" data-edit="bold" title="Bold (Ctrl/Cmd+B)">
+                <b>B</b>
             </a>
-            <a wicket:id="italic" class="btn" data-edit="italic" title="">
-                <wicket:link><img src="text_italic.png"></wicket:link>
+            <a id="italic" class="btn" data-edit="italic" title="Italic (Ctrl/Cmd+I)">
+                <i>I</i>
             </a>
-            <a wicket:id="strikethrough" class="btn" data-edit="strikethrough" title="">
-                <wicket:link><img src="text_strikethrough.png"></wicket:link>
+            <a id="strikethrough" class="btn" data-edit="strikethrough" title="Strikethrough">
+                <strike>S</strike>
             </a>
-            <a wicket:id="underline" class="btn" data-edit="underline" title="">
-                <wicket:link><img src="text_underline.png"></wicket:link>
-            </a>
-        </div>
-
-        <div class="btn-group">
-            <a wicket:id="hyperlink" class="btn dropdown-toggle" data-toggle="dropdown" title="">
-                <wicket:link><img src="link.png"></wicket:link>
-            </a>
-
-            <div class="dropdown-menu input-append">
-                <input class="span2" placeholder="URL" type="text" data-edit="createLink"/>
-                <button class="btn" type="button">Add</button>
-            </div>
-            <a wicket:id="removeHyperlink" class="btn" data-edit="unlink" title="">
-                <wicket:link><img src="link_delete.png"></wicket:link>
+            <a id="underline" class="btn" data-edit="underline" title="Underline (Ctrl/Cmd+U)">
+                <u>U</u>
             </a>
         </div>
 
         <div class="btn-group">
-            <a wicket:id="undo" class="btn" data-edit="undo" title="">
-                <wicket:link><img src="arrow_undo.png"></wicket:link>
-            </a>
-            <a wicket:id="redo" class="btn" data-edit="redo" title="">
-                <wicket:link><img src="arrow_redo.png"></wicket:link>
-            </a>
-        </div>
-        <div class="btn-group">
-            <a id="emoticons" class="btn dropdown-toggle" data-toggle="dropdown" title="">
+            <a id="emoticons" class="btn dropdown-toggle" data-toggle="dropdown" title="Emoticons">
                 <div class="emt">:) <b class="caret"></b></div></a>
             <ul class="dropdown-menu">
-                <li><a href="javascript:emtClick(':)');">
-                    <div class="emt" id="emt1"  style="font-size: 10pt">:)</div>
-                </a></li>
-                <li><a href="javascript:emtClick(':(');">
-                    <div class="emt" id="emt2" style="font-size: 10pt">:(</div>
-                </a></li>
-                <li><a href="javascript:emtClick(':D');">
-                    <div class="emt" id="emt3" style="font-size: 10pt">:D</div>
-                </a></li>
-                <li><a href="javascript:emtClick(';)');">
-                    <div class="emt" id="emt4"  style="font-size: 10pt">;)</div>
-                </a></li>
-                <li><a href="javascript:emtClick(':O');">
-                    <div class="emt" id="emt5"  style="font-size: 10pt">:O</div>
-                </a></li>
-                <li><a href="javascript:emtClick(':\'(');">
-                    <div class="emt" id="emt6" style="font-size: 10pt">:'(</div>
-                </a></li>
-                <li><a href="javascript:emtClick(':P');">
-                    <div class="emt" id="emt7"  style="font-size: 10pt">:P</div>
-                </a></li>
+                <li>
+                    <table>
+                        <tr>
+                            <td>
+                                <a href="javascript:emtClick(':)');">
+                                    <div class="emt" style="font-size: 10pt">:)</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick(':-)');">
+                                    <div class="emt" style="font-size: 10pt">:-)</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick(':o)');">
+                                    <div class="emt" style="font-size: 10pt">:o)</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick(':c)');">
+                                    <div class="emt" style="font-size: 10pt">:c)</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick(':^)');">
+                                    <div class="emt" style="font-size: 10pt">:^)</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick(':-D');">
+                                    <div class="emt" style="font-size: 10pt">:-D</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick(':-(');">
+                                    <div class="emt" style="font-size: 10pt">:-(</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick(':-9');">
+                                    <div class="emt" style="font-size: 10pt">:-9</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick(';-)');">
+                                    <div class="emt" style="font-size: 10pt">;-)</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick(':-P');">
+                                    <div class="emt" style="font-size: 10pt">:-P</div>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="javascript:emtClick(':-b');">
+                                    <div class="emt" style="font-size: 10pt">:-b</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick(':-O');">
+                                    <div class="emt" style="font-size: 10pt">:-O</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick(':-/');">
+                                    <div class="emt" style="font-size: 10pt">:-/</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick(':-X');">
+                                    <div class="emt" style="font-size: 10pt">:-X</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick(':-#');">
+                                    <div class="emt" style="font-size: 10pt">:-#</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick(':\'(');">
+                                    <div class="emt" style="font-size: 10pt">:'(</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick('B-)');">
+                                    <div class="emt" style="font-size: 10pt">B-)</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick('8-)');">
+                                    <div class="emt" style="font-size: 10pt">8-)</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick(':-\\');">
+                                    <div class="emt" style="font-size: 10pt">:-\</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick(';*(');">
+                                    <div class="emt" style="font-size: 10pt">;*(</div>
+                                </a>
+                            </td>
+                        </tr>
+                        <!-- xD =D :( :< :[ :{ =( ;) ;] ;D :P :p =P =p :b :Þ :O 8O :/ =/ :S :# :X B) O:)-->
+                        <tr>
+                            <td>
+                                <a href="javascript:emtClick(':-*');">
+                                    <div class="emt" style="font-size: 10pt">:-*</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick(':]');">
+                                    <div class="emt" style="font-size: 10pt">:]</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick(':>');">
+                                    <div class="emt" style="font-size: 10pt">:></div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick('=]');">
+                                    <div class="emt" style="font-size: 10pt">=]</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick('=)');">
+                                    <div class="emt" style="font-size: 10pt">=)</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick('8)');">
+                                    <div class="emt" style="font-size: 10pt">8)</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick(':}');">
+                                    <div class="emt" style="font-size: 10pt">:}</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick(':D');">
+                                    <div class="emt" style="font-size: 10pt">:D</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick('8D');">
+                                    <div class="emt" style="font-size: 10pt">8D</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick('XD');">
+                                    <div class="emt" style="font-size: 10pt">XD</div>
+                                </a>
+                            </td>
+                        </tr>
+
+                        <!--  :p =P =p :b :Þ :O 8O :/ =/ :S :# :X B) O:)-->
+                        <tr>
+                            <td>
+                                <a href="javascript:emtClick('xD');">
+                                    <div class="emt" style="font-size: 10pt">xD</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick('=D');">
+                                    <div class="emt" style="font-size: 10pt">=D</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick(':(');">
+                                    <div class="emt" style="font-size: 10pt">:(</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick(':[');">
+                                    <div class="emt" style="font-size: 10pt">:[</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick(':{');">
+                                    <div class="emt" style="font-size: 10pt">:{</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick(';)');">
+                                    <div class="emt" style="font-size: 10pt">;)</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick(':D');">
+                                    <div class="emt" style="font-size: 10pt">:D</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick(';]');">
+                                    <div class="emt" style="font-size: 10pt">;]</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick(';D');">
+                                    <div class="emt" style="font-size: 10pt">;D</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick(':P');">
+                                    <div class="emt" style="font-size: 10pt">:P</div>
+                                </a>
+                            </td>
+                        </tr>
+
+                        <!-- = :# :X B) O:)-->
+                        <tr>
+                            <td>
+                                <a href="javascript:emtClick(':p');">
+                                    <div class="emt" style="font-size: 10pt">:p</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick('=P');">
+                                    <div class="emt" style="font-size: 10pt">=P</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick('=p');">
+                                    <div class="emt" style="font-size: 10pt">=p</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick(':b');">
+                                    <div class="emt" style="font-size: 10pt">:b</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick(':Þ');">
+                                    <div class="emt" style="font-size: 10pt">:Þ</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick(':O');">
+                                    <div class="emt" style="font-size: 10pt">:O</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick('8O');">
+                                    <div class="emt" style="font-size: 10pt">8O</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick(';/');">
+                                    <div class="emt" style="font-size: 10pt">:/</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick('=/');">
+                                    <div class="emt" style="font-size: 10pt">=/</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick(':S');">
+                                    <div class="emt" style="font-size: 10pt">:S</div>
+                                </a>
+                            </td>
+                        </tr>
+                        <!-- 0_o T_T ^_^ ?-) [+=..]-->
+                        <tr>
+                            <td>
+                                <a href="javascript:emtClick(':#');">
+                                    <div class="emt" style="font-size: 10pt">:#</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick(':X');">
+                                    <div class="emt" style="font-size: 10pt">:X</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick('B)');">
+                                    <div class="emt" style="font-size: 10pt">B)</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick(';(');">
+                                    <div class="emt" style="font-size: 10pt">;(</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick('>:)');">
+                                    <div class="emt" style="font-size: 10pt">>:)</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick('>;)');">
+                                    <div class="emt" style="font-size: 10pt">>;)</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick('>:(');">
+                                    <div class="emt" style="font-size: 10pt">>:(</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick('O_o');">
+                                    <div class="emt" style="font-size: 10pt">O_o</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick('O_o');">
+                                    <div class="emt" style="font-size: 10pt">O_O</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick('o_o');">
+                                    <div class="emt" style="font-size: 10pt">o_o</div>
+                                </a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <a href="javascript:emtClick('0_o');">
+                                    <div class="emt" style="font-size: 10pt">0_o</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick('T_T');">
+                                    <div class="emt" style="font-size: 10pt">T_T</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick('^_^');">
+                                    <div class="emt" style="font-size: 10pt">^_^</div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="javascript:emtClick('?-)');">
+                                    <div class="emt" style="font-size: 10pt">?-)</div>
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </li>
+
             </ul>
         </div>
     </div>

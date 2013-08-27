@@ -57,32 +57,12 @@ public class ChatToolbar extends Panel implements IWysiwygToolbar
 	 */
 	public ChatToolbar(String id, IModel<String> model)
 	{
-		super(id, model);
-
-		getSession().setLocale(new Locale("english"));
+		super(id,model);
 
 		this.toolbar = new WebMarkupContainer("toolbar");
 		this.toolbar.setMarkupId("bToolbar");
 
-		//Adding Buttons with localizations
-		toolbar.add(new WebMarkupContainer("fontSize").add(AttributeModifier.replace("title",new ResourceModel("wicket.jquery.ui.wysiwyg.sample.toolbar.fontSize"))));
-
-		toolbar.add(new Label("huge",new ResourceModel("wicket.jquery.ui.wysiwyg.sample.toolbar.huge")));
-		toolbar.add(new Label("medium",new ResourceModel("wicket.jquery.ui.wysiwyg.sample.toolbar.medium")));
-		toolbar.add(new Label("small",new ResourceModel("wicket.jquery.ui.wysiwyg.sample.toolbar.small")));
-
-		toolbar.add(new WebMarkupContainer("bold").add(AttributeModifier.replace("title",new ResourceModel("wicket.jquery.ui.wysiwyg.sample.toolbar.bold"))));
-		toolbar.add(new WebMarkupContainer("italic").add(AttributeModifier.replace("title",new ResourceModel("wicket.jquery.ui.wysiwyg.sample.toolbar.italic"))));
-		toolbar.add(new WebMarkupContainer("strikethrough").add(AttributeModifier.replace("title",new ResourceModel("wicket.jquery.ui.wysiwyg.sample.toolbar.strikethrough"))));
-		toolbar.add(new WebMarkupContainer("underline").add(AttributeModifier.replace("title",new ResourceModel("wicket.jquery.ui.wysiwyg.sample.toolbar.underline"))));
-
-		toolbar.add(new WebMarkupContainer("hyperlink").add(AttributeModifier.replace("title",new ResourceModel("wicket.jquery.ui.wysiwyg.sample.toolbar.hyperlink"))));
-		toolbar.add(new WebMarkupContainer("removeHyperlink").add(AttributeModifier.replace("title",new ResourceModel("wicket.jquery.ui.wysiwyg.sample.toolbar.removeHyperlink"))));
-
-		toolbar.add(new WebMarkupContainer("undo").add(AttributeModifier.replace("title",new ResourceModel("wicket.jquery.ui.wysiwyg.sample.toolbar.undo"))));
-		toolbar.add(new WebMarkupContainer("redo").add(AttributeModifier.replace("title",new ResourceModel("wicket.jquery.ui.wysiwyg.sample.toolbar.redo"))));
-
-		toolbar.add(new EmoticonsBehavior("." + "emt"));
+		toolbar.add(new EmoticonsBehavior("."+"emt"));
 		this.add(this.toolbar);
 
 
