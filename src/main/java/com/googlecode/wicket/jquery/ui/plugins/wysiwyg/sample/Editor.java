@@ -1,6 +1,7 @@
 package com.googlecode.wicket.jquery.ui.plugins.wysiwyg.sample;
 
 import com.googlecode.wicket.jquery.ui.plugins.wysiwyg.WysiwygEditor;
+import com.googlecode.wicket.jquery.ui.plugins.wysiwyg.sample.toolbar.ChatToolbar;
 import com.googlecode.wicket.jquery.ui.plugins.wysiwyg.toolbar.DefaultWysiwygToolbar;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.form.AjaxButton;
@@ -18,7 +19,7 @@ public class Editor extends WebPage{
 	private static final long serialVersionUID=1L;
 	String value="Type";
 	WysiwygEditor wysiwygEditor;
-	DefaultWysiwygToolbar wysiwygDefaultToolbar;
+	ChatToolbar wysiwygDefaultToolbar;
 
 	public Editor(PageParameters parameters){
 
@@ -73,7 +74,7 @@ public class Editor extends WebPage{
 
 		form.add(langs);
 
-		wysiwygDefaultToolbar=new DefaultWysiwygToolbar("toolbarContainer");
+		wysiwygDefaultToolbar=new ChatToolbar("toolbarContainer");
 		form.add(wysiwygDefaultToolbar);
 		wysiwygEditor=new WysiwygEditor("editorContainer",new Model<String>(value),wysiwygDefaultToolbar);
 		form.add(wysiwygEditor);
